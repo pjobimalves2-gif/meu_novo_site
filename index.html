@@ -170,6 +170,20 @@
       margin-bottom: 6px;
       text-decoration: none;
     }
+    .botao-circular {
+  position: relative;
+  overflow: hidden; /* impede a imagem de sair do círculo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.botao-circular img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* mantém o rosto centralizado e não distorce */
+  border-radius: 50%;
+}
 
     .botao-circular:hover {
       transform: scale(1.08);
@@ -240,6 +254,70 @@
       color: #f0f0f0;
       border-top: 2px solid #ff7300;
     }
+    .btn-canva {
+  display: inline-block;
+  background-color: #ff7b00;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+  margin-top: 15px;
+}
+
+.btn-canva:hover {
+  background-color: #e66900;
+}
+.canva-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.btn-canva {
+  display: inline-block;
+  background-color: #ff7b00;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-canva:hover {
+  background-color: #e66900;
+  transform: scale(1.05);
+}
+.logo-pescar {
+  display: block;
+  margin: 20px auto;
+  width: 200px;
+  max-width: 90%;
+  border-radius: 10px;
+}
+/* ===== LOGO PESÇAR - ESTILO E ANIMAÇÃO ===== */
+.logo-pescar {
+  display: block;
+  margin: 20px auto;
+  width: 200px;
+  max-width: 90%;
+  border-radius: 10px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
+}
+
+/* Quando a logo estiver visível na tela */
+.logo-pescar.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
   </style>
 </head>
 
@@ -264,23 +342,60 @@
     <img src="./imagens/Turma.jpeg" alt="Turma de T.I do Projeto Pescar" width="525">
   </section>
 
-  <!-- CONTEÚDO -->
   <section id="curso">
-    <h1>Conteúdo</h1>
-    <h2>Primeira Turma de T.I do Pescar!</h2>
-    <p>Durante o curso, os alunos exploraram fundamentos de tecnologia, trabalho em equipe e cidadania, sempre com foco em crescimento pessoal e profissional.</p>
-  </section>
+  <h1>Conteúdo</h1>
+  <h2>Primeira Turma de T.I do Pescar!</h2>
+   <img src="./imagens/logopescar.jpeg" alt="Logo Projeto Pescar" class="logo-pescar">
 
-  <!-- MULTIMÍDIA -->
-  <section id="multimidia">
-    <h1>Vídeos e Multimídia</h1>
-    <p>Assista aos registros e vídeos que marcaram nossa trajetória.</p>
-    <figure>
-      <img src="./imagens/TurmaNaPuc.jpeg" alt="Turma de T.I em visita à PUCRS" width="600" height="400">
-      <figcaption>Turma de T.I no passeio da PUCRS</figcaption>
-    </figure>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/jNQXAC9IVRw" frameborder="0" allowfullscreen></iframe>
-  </section>
+  <p>
+    O <strong>Projeto Pescar</strong> nasceu em 1976, em Porto Alegre (RS), com o propósito de oferecer oportunidades de 
+    transformação social por meio da <strong>educação e inclusão no mercado de trabalho</strong>. 
+    Criado por iniciativa de Francisco Gross, o projeto começou com cursos profissionalizantes dentro das empresas, 
+    preparando jovens em situação de vulnerabilidade social para o futuro.
+  </p>
+
+  <p>
+    Ao longo dos anos, o Projeto Pescar expandiu-se para diversas áreas e estados do Brasil, formando milhares de jovens 
+    que desenvolveram não apenas <strong>competências técnicas</strong>, mas também valores humanos, cidadania e 
+    responsabilidade social.
+  </p>
+
+  <p>
+    Em 2025, nasceu a <strong>primeira turma de Tecnologia da Informação (T.I)</strong> da Fundação Projeto Pescar, unindo 
+    aprendizado técnico, trabalho em equipe e crescimento pessoal em uma jornada de seis meses marcante.
+  </p>
+</section>
+
+<!-- MULTIMÍDIA -->
+<section id="multimidia">
+  <h2>Multimídia</h2>
+
+  <h3 class="multimidia-descricao">
+    Confira abaixo as apresentações da turma de T.I, sobre sua trajetória durante 6 meses de desenvolvimento, diversão e aprendizado.
+  </h3>
+
+  <p>
+    Durante essa jornada, os alunos exploraram não apenas o universo da tecnologia, mas também vivências que envolveram 
+    <strong>cooperação, superação e criatividade</strong>. Cada atividade representou uma etapa do crescimento coletivo da turma, 
+    marcada por <strong>momentos de aprendizado, risadas e conquistas</strong> que ficarão guardados na memória de todos.
+  </p>
+
+  <p>
+    As apresentações abaixo foram desenvolvidas pela própria turma, refletindo toda a trajetória, dedicação e união vivida 
+    dentro do Projeto Pescar. São registros que simbolizam uma história de evolução e amizade.
+  </p>
+
+  <div class="canva-links">
+    <a href="https://www.canva.com/design/DAG2y9MPr1M/e6qTJcfawKyh5ARXSjw0bw/edit?utm_content=DAG2y9MPr1M&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" class="btn-canva">
+      🎨 Apresentação 1 no Canva
+    </a>
+
+    <a href="https://www.canva.com/design/DAG2v1bhZCk/TSJv1bpy2XlFGpvsk8LWeA/edit?utm_content=DAG2v1bhZCk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" class="btn-canva">
+      🧩 Apresentação 2 no Canva
+    </a>
+  </div>
+</section>
+
 
   <!-- ALUNOS -->
   <section id="alunos">
@@ -326,6 +441,22 @@
   <footer>
     © 2025 Fundação Projeto Pescar - Turma de T.I | Desenvolvido pelos alunos
   </footer>
+   <script>
+  const logo = document.querySelector('.logo-pescar');
+
+  function mostrarLogo() {
+    const posicao = logo.getBoundingClientRect().top;
+    const alturaTela = window.innerHeight;
+
+    if (posicao < alturaTela - 100) {
+      logo.classList.add('show');
+      window.removeEventListener('scroll', mostrarLogo);
+    }
+  }
+
+  window.addEventListener('scroll', mostrarLogo);
+  mostrarLogo(); // Caso já esteja visível ao carregar
+</script>
 
 </body>
 </html>
