@@ -109,7 +109,7 @@
       animation: zoomIn 1s ease forwards;
       animation-delay: 0.3s;
     }
-
+   
     @keyframes zoomIn {
       to {
         opacity: 1;
@@ -137,6 +137,15 @@
       gap: 18px;
       justify-content: center;
       margin: 24px 0;
+    }
+    .alunos-botoes2 {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      justify-content: center;
+      margin-top: 30px;
+      text-align: center;
+
     }
 
     .aluno-botao {
@@ -170,6 +179,31 @@
       margin-bottom: 6px;
       text-decoration: none;
     }
+    .botao-educador {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;          /* deixa a bolinha arredondada */
+  background-color: orange;    /* cor da bolinha */
+  overflow: hidden;            /* impede que a imagem "vaze" da bolinha */
+  border: none;
+  padding: 0;
+  position: relative;
+  cursor: pointer;
+}
+
+.botao-educador img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;                 /* ou maior se quiser que ocupe mais da bolinha */
+  height: 100%;
+  object-fit: cover;            /* mantém proporção e cobre toda a bolinha */
+  transform: translate(-50%, -50%);  /* centraliza exatamente no meio */
+}
+
+    
+
+    
     .botao-circular {
   position: relative;
   overflow: hidden; /* impede a imagem de sair do círculo */
@@ -222,6 +256,12 @@
 
     #educadores a:hover {
       text-decoration: underline;
+    }
+    .foto-educador {
+      width: 190px;
+      height: 190px;
+      object-fit: cover;
+      border-radius: 50%;
     }
 
     /* RESPONSIVIDADE */
@@ -431,10 +471,22 @@
 
   <!-- EDUCADORES -->
   <section id="educadores">
-    <h1>Educadores Sociais</h1>
-    <p><a href="https://example.com/educador1" target="_blank">Klaiton Scherer</a></p>
-    <h2>Outros Educadores</h2>
-    <p><a href="https://example.com/educador2" target="_blank">Outros</a></p>
+  <h1>Educador Social</h1>
+
+  <p>
+    <a href="https://example.com/pedro.png" target="_blank">Klaiton Scherer</a>
+  </p>
+
+  <div class="botao-circular2">
+    <div class="aluno-botao2">
+      <img src="./imagens/pedro.png" 
+      alt="Klaiton Scherer" class="foto-educador">
+      <div class="nome-aluno">Klaiton Scherer</div>
+    </div>
+  </div>
+</section>
+
+
   </section>
 
   <!-- FOOTER -->
@@ -459,4 +511,4 @@
 </script>
 
 </body>
-</html>
+</html>  poderia corrigir a parte da foto não estar centralizada na bolinha laranja? 
