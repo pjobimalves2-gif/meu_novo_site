@@ -138,6 +138,31 @@
       justify-content: center;
       margin: 24px 0;
     }
+    .botao-educador {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;          
+  background-color: orange;    
+  overflow: hidden;            
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  margin: 20px auto;
+}
+    .botao-circular2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.aluno-botao2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 
     .aluno-botao {
       display: flex;
@@ -209,6 +234,15 @@
       max-width: 800px;
       box-shadow: 0 6px 20px rgba(0,0,0,0.3);
     }
+
+    .foto-educador {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 0%;
+      
+    }
+    
 
     #educadores h1, #educadores h2 {
       color: #ffcc00;
@@ -431,11 +465,22 @@
 
   <!-- EDUCADORES -->
   <section id="educadores">
-    <h1>Educadores Sociais</h1>
-    <p><a href="https://example.com/educador1" target="_blank">Klaiton Scherer</a></p>
-    <h2>Outros Educadores</h2>
-    <p><a href="https://example.com/educador2" target="_blank">Outros</a></p>
-  </section>
+  <h1>Educador Social</h1>
+
+  <p>
+    <a href="https://example.com/pedro.png" target="_blank">Klaiton Scherer</a>
+  </p>
+
+  <div class="botao-circular2">
+    <div class="aluno-botao2">
+      <div class="botao-educador">
+      <img src="./imagens/pedro.png" 
+      alt="Klaiton" class="foto-educador">
+    </div>
+  </div>
+</div>
+</section>
+
 
   <!-- FOOTER -->
   <footer>
