@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arthur Iam - Biografia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* ======= ESTILO GERAL ======= */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #2e1a78, #1d0d47);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    /* ======= CABEÇALHO ======= */
+    header h1 {
+      color: #ffcc00; /* 🔹 Cor dourada */
+      text-shadow: 0 0 15px rgba(255, 204, 0, 0.7);
+      margin-bottom: 35px;
+      font-size: 2.2rem;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+
+    /* ======= CONTAINER ======= */
+    .bio-container {
+      background: rgba(40, 26, 128, 0.85);
+      backdrop-filter: blur(12px);
+      border-radius: 28px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
+      border: 3px solid #ffcc00; /* 🔹 Mesma cor do título */
+      max-width: 420px;
+      padding: 38px 30px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .bio-container:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 35px rgba(255, 255, 255, 0.4);
+    }
+
+    /* ======= FOTO ======= */
+    .bio-foto {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid #ffcc00; /* 🔹 Borda dourada */
+      box-shadow: 0 0 20px rgba(255, 204, 0, 0.5);
+      margin-bottom: 18px;
+      background-color: #fff;
+    }
+
+    /* ======= TÍTULOS ======= */
+    h2 {
+      color: #ffcc00; /* 🔹 “Sobre Arthur Iam” na mesma cor do título */
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+    }
+
+    h3 {
+      color: #ffcc00;
+      margin-top: 24px;
+      margin-bottom: 8px;
+      font-size: 1.3rem;
+    }
+
+    /* ======= INFO ======= */
+    .info-nome {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      padding: 10px;
+      margin-bottom: 15px;
+      text-align: left;
+    }
+
+    .info-nome p {
+      font-size: 1rem;
+      margin: 4px 0;
+    }
+
+    p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: 10px;
+      text-align: justify;
+    }
+
+    strong {
+      color: #ffcc00;
+    }
+
+    /* ======= LISTA ======= */
+    ul {
+      background: rgba(50, 52, 179, 0.6);
+      border-radius: 16px;
+      padding: 16px 26px;
+      margin-top: 18px;
+      list-style: none;
+      text-align: left;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    ul li {
+      margin: 6px 0;
+      position: relative;
+      padding-left: 22px;
+    }
+
+    ul li::before {
+      content: "✨";
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    /* ======= BOTÃO VOLTAR ======= */
+    .btn-voltar {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 36px;
+      background: transparent;
+      color: #fff;
+      border: 3px solid #ffcc00; /* 🔹 Borda dourada */
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.05rem;
+      transition: all 0.3s ease;
+    }
+
+    .btn-voltar:hover {
+      background: #ffcc00;
+      color: #1d0d47;
+      box-shadow: 0 0 20px rgba(255, 204, 0, 0.6);
+    }
+
+    /* ======= RESPONSIVIDADE ======= */
+    @media (max-width: 480px) {
+      .bio-container {
+        padding: 28px 20px;
+      }
+
+      header h1 {
+        font-size: 1.7rem;
+      }
+
+      p, ul li {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Biografia de Arthur Iam</h1>
+  </header>
+
+  <main>
+    <section class="bio-container">
+      <img src="../imagens/pedro.jpg" alt="Foto de Arthur Iam" class="bio-foto" onerror="this.style.display='none'">
+
+      <h2>Sobre Arthur Iam</h2>
+
+      <div class="info-nome">
+        <p><strong>Nome completo:</strong> Arthur Iam</p>
+        <p><strong>Idade:</strong> 16</p>
+      </div>
+
+      <p><strong>Motivo de vir para o Pescar:</strong> Ele veio no intuito de aprender o máximo que puder, extrair conhecimento das pessoas e buscar oportunidades.</p>
+
+      <p><strong>Hobby:</strong> Ele gosta de jogar no celular, jogar basquete, sair com a namorada, ir para a academia e sair com amigos.</p>
+
+      <p><strong>Sua história:</strong> Ele vem da zona sul, Morro do Cruzeiro (conhecido como Barracão). É um ambiente um tanto hostil, mas, graças à família, ele não se deixou influenciar, buscando sempre fazer o certo e o melhor para os seus. Se familiarizou com esportes, trabalhos e estudos até chegar ao Pescar.</p>
+
+      <p><strong>Opinião sobre o hub:</strong> Ele diz que é um ambiente profissional e educativo.</p>
+
+      <p><strong>O que quer ser no futuro:</strong> Ele deseja ter uma família unida, um ótimo emprego relacionado a T.I. e continuar praticando basquete.</p>
+
+      <h3>Habilidades</h3>
+      <ul>
+        <li>Melhorou suas apresentações.</li>
+        <li>Aprendeu bastante sobre HTML.</li>
+        <li>Aprendeu a lidar melhor com as pessoas.</li>
+      </ul>
+
+      <a href="../index.html" class="btn-voltar">⬅ Voltar para a turma</a>
+    </section>
+  </main>
+</body>
+</html>
