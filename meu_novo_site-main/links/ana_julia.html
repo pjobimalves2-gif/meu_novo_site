@@ -39,7 +39,7 @@
       backdrop-filter: blur(12px);
       border-radius: 28px;
       box-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
-      border: 2px solid #ffa600;
+      border: 2px solid #ffcc00;
       max-width: 420px;
       padding: 38px 30px;
       text-align: center;
@@ -57,8 +57,8 @@
       height: 150px;
       border-radius: 50%;
       object-fit: cover;
-      border: 5px solid #fcfcfc;
-      box-shadow: 0 0 20px rgba(255, 115, 0, 0.4);
+      border: 5px solid #ffcc00;
+      box-shadow: 0 0 20px rgba(255, 204, 0, 0.4);
       margin-bottom: 18px;
       background-color: #fff;
     }
@@ -85,10 +85,9 @@
       text-align: left;
     }
 
-    .info-nome p {
-      font-size: 1rem;
-      margin: 4px 0;
-    }
+    .info-nome p { font-size: 1rem; margin: 4px 0; }
+    p { font-size: 0.95rem; line-height: 1.5; margin-bottom: 10px; text-align: justify; }
+    strong { color: #ffcc00; }
 
     p {
       font-size: 0.95rem;
@@ -126,22 +125,23 @@
     }
 
     /* ======= BOTÃO VOLTAR ======= */
-    .btn-voltar {
+      .btn-voltar {
       display: inline-block;
       margin-top: 30px;
       padding: 12px 36px;
-      background: linear-gradient(90deg, #ff7300, #ff9a1f);
-      color: #fff; /* 🔹 Texto branco */
+      background: transparent;
+      color: #fff;
+      border: 3px solid #ffcc00;
       border-radius: 50px;
       text-decoration: none;
       font-weight: bold;
       font-size: 1.05rem;
-      box-shadow: 0 4px 12px rgba(255, 115, 0, 0.4);
       transition: all 0.3s ease;
     }
 
     .btn-voltar:hover {
-      transform: scale(1.05);
+      background: #ffcc00;
+      color: #1d0d47;
       box-shadow: 0 0 20px rgba(255, 204, 0, 0.6);
     }
 
@@ -169,7 +169,7 @@
 
   <main>
     <section class="bio-container">
-      <img src="../imagens/pedro.jpg" alt="Foto de Ana Julia" class="bio-foto" onerror="this.style.display='none'">
+      <img src="../imagens/Ana.jpeg" alt="Foto de Ana Julia" class="bio-foto" onerror="this.style.display='none'">
 
       <h2>Sobre Ana Julia</h2>
 
