@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Fundação Projeto Pescar - Turma de T.I</title>
+  <style>
+    /* RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #3e259e;
+      font-family: "Poppins", Arial, sans-serif;
+      color: white;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    /* NAVBAR */
+    header nav {
+      background-color: #2b1976;
+      padding: 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+      z-index: 1000;
+    }
+
+    header nav a {
+      background: #ff7300;
+      color: white;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 12px 28px;
+      border-radius: 50px;
+      box-shadow: 0 6px 0px #b84e00;
+      transition: all 0.2s ease-in-out;
+      font-size: 1.05rem;
+    }
+
+    header nav a:hover {
+      background: #ff8c1a;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 0px #b84e00;
+    }
+
+    /* SEÇÕES */
+    section {
+      padding: 120px 20px 60px;
+      min-height: 100vh;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    section:nth-child(even) {
+      background-color: #3234b3;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      color: #ffcc00;
+      margin-bottom: 10px;
+    }
+
+    p {
+      max-width: 800px;
+      margin: 0 auto 15px;
+      font-size: 1.1rem;
+      color: #f0f0f0;
+    }
+
+    img {
+      display: block;
+      margin: 20px auto;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+      opacity: 0;
+      transform: scale(0.9);
+      animation: zoomIn 1s ease forwards;
+      animation-delay: 0.3s;
+    }
+
+    @keyframes zoomIn {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    figcaption {
+      margin-top: 8px;
+      font-style: italic;
+      font-size: 0.95rem;
+      color: #ddd;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    /* ALUNOS */
+    #alunos {
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .alunos-botoes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      justify-content: center;
+      margin: 24px 0;
+    }
+    .botao-educador {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;          
+  background-color: orange;    
+  overflow: hidden;            
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  margin: 20px auto;
+}
+    .botao-circular2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.educador-botao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+    .aluno-botao {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100px;
+      margin-bottom: 10px;
+      opacity: 0;
+      transform: scale(0.8);
+      animation: aparecer 1s ease forwards;
+    }
+
+    @keyframes aparecer {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .botao-circular {
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(135deg, #ff9800 70%, #ffb74d 100%);
+      border-radius: 50%;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+      border: 3px solid #fff3e0;
+      cursor: pointer;
+      display: block;
+      transition: transform 0.2s, box-shadow 0.2s;
+      margin-bottom: 6px;
+      text-decoration: none;
+    }
+    .botao-circular {
+  position: relative;
+  overflow: hidden; /* impede a imagem de sair do círculo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.botao-circular img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* mantém o rosto centralizado e não distorce */
+  border-radius: 50%;
+}
+
+    .botao-circular:hover {
+      transform: scale(1.08);
+      box-shadow: 0 4px 16px rgba(255,152,0,0.25);
+      background: linear-gradient(135deg, #ffb74d 70%, #ff9800 100%);
+    }
+
+    .nome-aluno {
+      text-align: center;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: bold;
+      margin-top: 2px;
+      word-break: break-word;
+    }
+
+    /* EDUCADORES */
+    #educadores {
+      padding: 80px 20px;
+      background: #2b1976;
+      border-radius: 20px;
+      margin: 40px auto;
+      max-width: 800px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    }
+
+    .foto-educador {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 0%;
+      
+    }
+
+    .nome-educador {
+      text-align: center;
+      color: #ffcc00;
+      font-size: 2rem;
+      font-weight: bold;
+      margin-top: 2px;
+      word-break: break-word;
+    }
+    .botao-educador {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+    #educadores h1, #educadores h2 {
+      color: #ffcc00;
+    }
+
+    #educadores a {
+      color: #ffcc00;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    #educadores a:hover {
+      text-decoration: underline;
+    }
+
+    /* RESPONSIVIDADE */
+    @media (max-width: 768px) {
+      header nav a {
+        font-size: 1rem;
+        padding: 10px 20px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .aluno-botao {
+        width: 80px;
+      }
+      .botao-circular {
+        width: 80px;
+        height: 80px;
+      }
+      .nome-aluno {
+        font-size: 0.9rem;
+      }
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: #2b1976;
+      padding: 20px;
+      text-align: center;
+      font-size: 0.95rem;
+      color: #f0f0f0;
+      border-top: 2px solid #ff7300;
+    }
+    .btn-canva {
+  display: inline-block;
+  background-color: #ff7b00;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+  margin-top: 15px;
+}
+
+.btn-canva:hover {
+  background-color: #e66900;
+}
+.canva-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.btn-canva {
+  display: inline-block;
+  background-color: #ff7b00;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-canva:hover {
+  background-color: #e66900;
+  transform: scale(1.05);
+}
+.logo-pescar {
+  display: block;
+  margin: 20px auto;
+  width: 200px;
+  max-width: 90%;
+  border-radius: 10px;
+}
+/* ===== LOGO PESÇAR - ESTILO E ANIMAÇÃO ===== */
+.logo-pescar {
+  display: block;
+  margin: 20px auto;
+  width: 200px;
+  max-width: 90%;
+  border-radius: 10px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
+}
+
+/* Quando a logo estiver visível na tela */
+.logo-pescar.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header style="border: 3px solid yellow; padding: 10px;">
+  <nav>
+    <a href="#inicio">Início</a>
+    <a href="#curso">Conteúdo</a>
+    <a href="#multimidia">Multimídia</a>
+    <a href="#alunos">Alunos</a>
+    <a href="#educadores">Educadores</a>
+  </nav>
+</header>
+
+
+  <!-- INÍCIO -->
+  <section id="inicio">
+    <h1>Bem-vindo ao Site da Turma de T.I!</h1>
+    <p>Este é um site repleto de memórias, curiosidades e registros de uma das primeiras turmas de T.I do Projeto Pescar em 2025.</p>
+    <p>Feito para eternizar os momentos e conquistas da turma.</p>
+    <img src="./imagens/Turma.jpeg" alt="Turma de T.I do Projeto Pescar" width="525">
+  </section>
+
+  <section id="curso">
+  <h1>Conteúdo</h1>
+  <h2>Primeira Turma de T.I do Pescar!</h2>
+   <img src="./imagens/logopescar.jpeg" alt="Logo Projeto Pescar" class="logo-pescar">
+
+  <p>
+    O <strong>Projeto Pescar</strong> nasceu em 1976, em Porto Alegre (RS), com o propósito de oferecer oportunidades de 
+    transformação social por meio da <strong>educação e inclusão no mercado de trabalho</strong>. 
+    Criado por iniciativa de Francisco Gross, o projeto começou com cursos profissionalizantes dentro das empresas, 
+    preparando jovens em situação de vulnerabilidade social para o futuro.
+  </p>
+
+  <p>
+    Ao longo dos anos, o Projeto Pescar expandiu-se para diversas áreas e estados do Brasil, formando milhares de jovens 
+    que desenvolveram não apenas <strong>competências técnicas</strong>, mas também valores humanos, cidadania e 
+    responsabilidade social.
+  </p>
+
+  <p>
+    Em 2025, nasceu a <strong>primeira turma de Tecnologia da Informação (T.I)</strong> da Fundação Projeto Pescar, unindo 
+    aprendizado técnico, trabalho em equipe e crescimento pessoal em uma jornada de seis meses marcante.
+  </p>
+</section>
+
+<!-- MULTIMÍDIA -->
+<section id="multimidia">
+  <h2>Multimídia</h2>
+
+  <h3 class="multimidia-descricao">
+    Confira abaixo as apresentações da turma de T.I, sobre sua trajetória durante 6 meses de desenvolvimento, diversão e aprendizado.
+  </h3>
+
+  <p>
+    Durante essa jornada, os alunos exploraram não apenas o universo da tecnologia, mas também vivências que envolveram 
+    <strong>cooperação, superação e criatividade</strong>. Cada atividade representou uma etapa do crescimento coletivo da turma, 
+    marcada por <strong>momentos de aprendizado, risadas e conquistas</strong> que ficarão guardados na memória de todos.
+  </p>
+
+  <p>
+    As apresentações abaixo foram desenvolvidas pela própria turma, refletindo toda a trajetória, dedicação e união vivida 
+    dentro do Projeto Pescar. São registros que simbolizam uma história de evolução e amizade.
+  </p>
+
+  <div class="canva-links">
+    <a href="https://www.canva.com/design/DAG2y9MPr1M/e6qTJcfawKyh5ARXSjw0bw/edit?utm_content=DAG2y9MPr1M&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" class="btn-canva">
+      🎨 Apresentação 1 no Canva
+    </a>
+
+    <a href="https://www.canva.com/design/DAG2v1bhZCk/TSJv1bpy2XlFGpvsk8LWeA/edit?utm_content=DAG2v1bhZCk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" class="btn-canva">
+      🧩 Apresentação 2 no Canva
+    </a>
+  </div>
+</section>
+
+
+  <!-- ALUNOS -->
+  <section id="alunos">
+    <h1>Alunos</h1>
+    <p>Conheça os integrantes da turma de T.I 2025:</p>
+
+    <div class="alunos-botoes">
+      <!-- Cada bloco é um aluno -->
+      <div class="aluno-botao"><a href="./links/pedro.html" target="_blank" class="botao-circular"><img src="./imagens/PedroJ.jpeg" alt="Pedro Jobim" style="border-radius:50%;" width="100%" height="100%"></a><div class="nome-aluno">Pedro Jobim</div></div>
+      <div class="aluno-botao"><a href="./links/rebecca.html" target="_blank" class="botao-circular"><img src="./imagens/Rebecca.jpeg" alt="Rebecca" style="border-radius:50%;" width="100%" height="100%"></a><div class="nome-aluno">Rebecca</div></div>
+      <div class="aluno-botao"><a href="./links/pedro_carlesco.html" target="_blank" class="botao-circular"><img src="./imagens/PedroC.jpeg" alt="Pedro Carlesco" style="border-radius:50%;" width="100%" height="100%"></a><div class="nome-aluno">Pedro Carlesco</div></div>
+      <div class="aluno-botao"><a href="./links/artur_cunha.html" target="_blank" class="botao-circular"><img src="./imagens/Cunha.jpeg" alt="Arthur Cunha" style="border-radius:50%;" width="100%" height="100%"></a><div class="nome-aluno">Arthur Cunha</div></div>
+      <div class="aluno-botao"><a href="./links/artur_iam.html" target="_blank" class="botao-circular"><img src="./imagens/Arthur.jpeg" alt="Arthur Ian" style="border-radius:50%;" width="100%" height="100%"></a><div class="nome-aluno">Arthur Ian</div></div>
+      <div class="aluno-botao"><a href="./links/sarah.html" target="_blank" class="botao-circular"><img src="./imagens/Sarah.jpeg" alt="Sarah" style="border-radius:50%;" width="100%" height="100%"></a><div class="nome-aluno">Sarah</div></div>
+      <div class="aluno-botao"><a href="./links/kassia.html" target="_blank" class="botao-circular"><img src="./imagens/Kassia.jpeg" alt="Kassia" style="border-radius:50%;" width="100%" height="100%"></a><div class="nome-aluno">Kassia</div></div>
+      <div class="aluno-botao"><a href="./links/eduarda.html" target="_blank" class="botao-circular"><img src="./imagens/Eduarda.jpeg" alt="Eduarda" style="border-radius:50%;" width="100%" height="100%"></a><div class="nome-aluno">Eduarda</div></div>
+      <div class="aluno-botao"><a href="./links/mateus_goncalves.html" target="_blank" class="botao-circular"><img src="./imagens/Mateus.jpeg" alt="Mateus Gonçalves" style="border-radius:50%;" width="100%" height="100%"></a><div class="nome-aluno">Mateus Gonçalves</div></div>
+      <div class="aluno-botao"><a href="./links/matheus_diogenes.html" target="_blank" class="botao-circular"><img src="./imagens/Matheus.jpeg" alt="Matheus Diogenes" style="border-radius:50%;" width="100%" height="100%"></a><div class="nome-aluno">Matheus Diogenes</div></div>
+      <div class="aluno-botao"><a href="./links/tabata.html" target="_blank" class="botao-circular"><img src="./imagens/Tabata.jpeg" alt="Tábata" style="border-radius:50%;" width="100%" height="100%"></a><div class="nome-aluno">Tábata</div></div>
+      <div class="aluno-botao"><a href="./links/nycolas.html" target="_blank" class="botao-circular"><img src="./imagens/Nycollas.jpeg" alt="Nycolas" style="border-radius:50%;" width="100%" height="100%"></a><div class="nome-aluno">Nycolas</div></div>
+      <div class="aluno-botao"><a href="./links/felipe.html" target="_blank" class="botao-circular"><img src="./imagens/Felipe.jpeg" alt="Felipe" style="border-radius:50%;" width="100%" height="100%"></a><div class="nome-aluno">Felipe</div></div>
+      <div class="aluno-botao"><a href="./links/bruno.html" target="_blank" class="botao-circular"><img src="./imagens/Bruno.jpeg" alt="Bruno" style="border-radius:50%;" width="100%" height="100%"></a><div class="nome-aluno">Bruno</div></div>
+      <div class="aluno-botao"><a href="./links/ryan.html" target="_blank" class="botao-circular"><img src="./imagens/Ryan.jpeg" alt="Ryan" style="border-radius:50%;" width="100%" height="100%"></a><div class="nome-aluno">Ryan</div></div>
+      <div class="aluno-botao"><a href="./links/hanyer.html" target="_blank" class="botao-circular"><img src="./imagens/Hanyer.jpeg" alt="Hanyer" style="border-radius:50%;" width="100%" height="100%"></a><div class="nome-aluno">Hanyer</div></div>
+      <div class="aluno-botao"><a href="./links/derick.html" target="_blank" class="botao-circular"><img src="./imagens/Derick.jpeg" alt="Derick" style="border-radius:50%;" width="100%" height="100%"></a><div class="nome-aluno">Derick</div></div>
+      <div class="aluno-botao"><a href="./links/guilherme.html" target="_blank" class="botao-circular"><img src="./imagens/Guilherme.jpeg" alt="Guilherme" style="border-radius:50%;" width="100%" height="100%"></a><div class="nome-aluno">Guilherme</div></div>
+      <div class="aluno-botao"><a href="./links/ana_julia.html" target="_blank" class="botao-circular"><img src="./imagens/Ana.jpeg" alt="Ana Júlia" style="border-radius:50%;" width="100%" height="100%"></a><div class="nome-aluno">Ana Júlia</div></div>
+      <div class="aluno-botao"><a href="./links/daniela.html" target="_blank" class="botao-circular"><img src="./imagens/Daniela.jpeg" alt="Daniela" style="border-radius:50%;" width="100%" height="100%"></a><div class="nome-aluno">Daniela</div></div>
+      <div class="aluno-botao"><a href="./links/stefany.html" target="_blank" class="botao-circular"><img src="./imagens/Stefany.jpeg" alt="Stefany" style="border-radius:50%;" width="100%" height="100%"></a><div class="nome-aluno">Stefany</div></div>
+      <div class="aluno-botao"><a href="./links/rafaela.html" target="_blank" class="botao-circular"><img src="./imagens/Rafa.jpeg" alt="Rafaela" style="border-radius:50%;" width="100%" height="100%"></a><div class="nome-aluno">Rafaela</div></div>
+    </div>
+  </section>
+
+  <!-- EDUCADORES -->
+  <section id="educadores">
+  <h1>Educador Social</h1>
+
+  <p>
+    <a href="https://example.com/pedro.png" target="_blank">Klaiton Scherer</a>
+  </p>
+
+  <div class="educador-botao">
+    <div class="botao-educador">
+      <img src="./imagens/Klaiton.jpeg" alt="Klaiton" class="foto-educador">
+    </div>
+    <div class="nome-educador">Educador da turma de T.I</div>
+  </div>
+</section>
+
+
+  <!-- FOOTER -->
+  <footer>
+    © 2025 Fundação Projeto Pescar - Turma de T.I | Desenvolvido pelos alunos
+  </footer>
+   <script>
+  const logo = document.querySelector('.logo-pescar');
+
+  function mostrarLogo() {
+    const posicao = logo.getBoundingClientRect().top;
+    const alturaTela = window.innerHeight;
+
+    if (posicao < alturaTela - 100) {
+      logo.classList.add('show');
+      window.removeEventListener('scroll', mostrarLogo);
+    }
+  }
+
+  window.addEventListener('scroll', mostrarLogo);
+  mostrarLogo(); // Caso já esteja visível ao carregar
+</script>
+
+</body>
+</html>
