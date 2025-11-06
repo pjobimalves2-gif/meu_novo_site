@@ -3,98 +3,145 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/projeto_site/links/links.css">
-  <title>rebecca - Biografia</title>
+  <title>Rebecca - Biografia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+
+    body{
+      font-family:'Poppins', sans-serif;
+      background:linear-gradient(135deg,#2e1a78,#1d0d47);
+      color:#fff;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      min-height:100vh;
+      padding:40px 20px;
+    }
+
+    header h1{
+      color:#ffcc00;
+      text-shadow:0 0 15px rgba(255,204,0,.7);
+      margin-bottom:35px;
+      font-size:2.2rem;
+      text-align:center;
+      letter-spacing:1px;
+    }
+
+    .bio-container{
+      background: rgba(40,26,128,0.85);
+      backdrop-filter: blur(12px);
+      border-radius:28px;
+      box-shadow:0 0 20px rgba(255,255,255,.25);
+      border:3px solid #ffcc00;
+      max-width:420px;
+      padding:38px 30px;
+      text-align:center;
+      transition:transform .3s ease, box-shadow .3s ease;
+    }
+
+    .bio-container:hover{
+      transform: translateY(-6px);
+      box-shadow:0 0 35px rgba(255,255,255,.4);
+    }
+
+    .bio-foto{
+      width:150px;
+      height:150px;
+      border-radius:50%;
+      object-fit:cover;
+      border:5px solid #ffcc00;
+      box-shadow:0 0 20px rgba(255,204,0,.5);
+      margin-bottom:18px;
+      background-color:#fff;
+    }
+
+    h2,h3{ color:#ffcc00; }
+    h2{ font-size:1.6rem; margin-bottom:12px; }
+    h3{ font-size:1.3rem; margin-top:24px; margin-bottom:8px; }
+
+    p{ font-size:.95rem; line-height:1.5; margin-bottom:10px; text-align:justify; }
+    strong{ color:#ffcc00; }
+
+    ul{
+      background: rgba(50,52,179,0.6);
+      border-radius:16px;
+      padding:16px 26px;
+      margin-top:18px;
+      list-style:none;
+      text-align:left;
+      box-shadow:0 2px 10px rgba(0,0,0,.2);
+    }
+
+    ul li{
+      margin:6px 0;
+      position:relative;
+      padding-left:22px;
+    }
+
+    ul li::before{
+      content:"✨";
+      position:absolute;
+      left:0;
+      top:0;
+    }
+
+    .btn-voltar{
+      display:inline-block;
+      margin-top:30px;
+      padding:12px 36px;
+      background:transparent;
+      color:#fff;
+      border:3px solid #ffcc00;
+      border-radius:50px;
+      text-decoration:none;
+      font-weight:bold;
+      font-size:1.05rem;
+      transition:all .3s ease;
+    }
+
+    .btn-voltar:hover{
+      background:#ffcc00;
+      color:#1d0d47;
+      box-shadow:0 0 20px rgba(255,204,0,.6);
+    }
+
+    @media(max-width:480px){
+      .bio-container{padding:28px 20px;}
+      header h1{font-size:1.7rem;}
+      p, ul li{font-size:.9rem;}
+    }
+  </style>
 </head>
+
 <body>
   <header>
     <h1>Biografia de Rebecca</h1>
   </header>
+
   <main>
     <section class="bio-container">
-      <img src="../imagens/pedro.jpg" alt="Foto de Rebecca" class="bio-foto" onerror="this.style.display='none'">
+      <img src="../imagens/Rebecca.jpeg" alt="Foto de Rebecca" class="bio-foto" onerror="this.style.display='none'">
+
       <h2>Sobre Rebecca</h2>
-      <p><strong>Nome completo:</strong> Rebecca Felicio Nostrani</p>
-      <p><strong>Descrição:</strong> 
 
-<p><strong>Idade:</strong> 18  </p>
+      <p><strong>Nome completo:</strong> Rebecca Felício Nostrani</p>
+      <p><strong>Idade:</strong> 18 anos</p>
+      <p><strong>Motivo de vir para o Pescar:</strong> Desenvolver ética, comunicação e trabalho em equipe, pessoal e profissionalmente.</p>
+      <p><strong>Hobbies:</strong> Música, ler, escrever, jogar e aprender coisas novas.</p>
+      <p><strong>História:</strong> Nasceu e cresceu na Santa Rosa, enfrentando altos e baixos do dia a dia. Busca sempre evoluir como pessoa e aproveitar oportunidades para aprender coisas novas.</p>
+      <p><strong>Opinião sobre o hub:</strong> Um ótimo ambiente para aprendizado e crescimento.</p>
+      <p><strong>O que quer ser no futuro:</strong> Atua como veterinária.</p>
 
-<p><strong> de vir para o Pescar:</strong> pessoal e profissional, ética, comunicação e trabalho em equipe.
-
-<p><strong>Hobbie:</strong> música, ler, escrever, jogar e aprender coisas novas.</p>
-
-<p><strong>História:</strong> Uma garota que nasceu e cresceu na Santa Rosa, vivendo uma vida com altos e baixos do dia-a-dia, buscando sempre melhorar como pessoa e procurando por oportunidades, sempre buscando por aprender coisas novas.</p>
-
-
-<p><strong>Opinião sobre o hub:</strong> Um ótimo ambiente para se estar.</p>
-
-<p><strong> que você quer ser no futuro:</strong> Busca atuar como veterinária.</p>
-      <h3>Curiosidades</h3>
+      <h3>Habilidades</h3>
       <ul>
-        <li>Habilidade 1 sobre Rebecca.</li>
-        <li>Habilidade 2 sobre Rebecca.</li>
-        <li>Habilidade 3 sobre Rebecca.</li>
+        <li>Melhorou sua comunicação.</li>
+        <li>Desenvolveu trabalho em equipe.</li>
+        <li>Expandiu sua criatividade.</li>
       </ul>
-    </section>
-    <a href="../index.html" class="btn-voltar">Voltar para a turma</a>
 
+      <a href="../index.html" class="btn-voltar">⬅ Voltar para a turma</a>
+    </section>
   </main>
-  <style>
-    body {
-      background: #3e259e;
-      font-family: 'Poppins', Arial, sans-serif;
-      color: #fff;
-    }
-    .bio-container {
-      background: #2b1976;
-      color: #fff;
-      border-radius: 36px;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.18);
-      max-width: 420px;
-      margin: 40px auto;
-      padding: 40px 28px 32px 28px;
-      text-align: center;
-      border: 4px solid #ff7300;
-    }
-    .bio-foto {
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 50%;
-      margin-bottom: 22px;
-      border: 5px solid #ff7300;
-      background: #fff3e0;
-      box-shadow: 0 4px 16px rgba(255,115,0,0.12);
-    }
-    .btn-voltar {
-      display: inline-block;
-      margin-top: 28px;
-      padding: 12px 32px;
-      background: #ff7300;
-      color: #fff;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1.08rem;
-      box-shadow: 0 6px 0px #b84e00;
-      transition: all 0.2s;
-    }
-    .btn-voltar:hover {
-      background: #ff8c1a;
-      box-shadow: 0 8px 0px #b84e00;
-    }
-    ul {
-      background: #3234b3;
-      border-radius: 24px;
-      padding: 18px 18px 18px 32px;
-      margin-top: 18px;
-      color: #fff;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-    }
-    h1, h2, h3 {
-      color: #ffcc00;
-      border-radius: 18px;
-    }
-  </style>
 </body>
 </html>
